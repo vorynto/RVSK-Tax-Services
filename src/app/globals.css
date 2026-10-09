@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/*
+ * RVSK brand tokens.
+ * Brand green #00AC1F and brand blue #333982 are taken from the existing
+ * rvsktaxservices.com stylesheet (Elementor global colours).
+ * #00AC1F has ~3:1 contrast on white, so it is used for fills, icons and
+ * large display text; body-size green text uses brand-green-700 (#007F17, ~5.1:1).
+ */
+@theme {
+  --color-brand-green: #00ac1f;
+  --color-brand-green-50: #ecfaee;
+  --color-brand-green-100: #d2f3d8;
+  --color-brand-green-200: #a6e7b1;
+  --color-brand-green-300: #6fd683;
+  --color-brand-green-400: #33c24d;
+  --color-brand-green-500: #00ac1f;
+  --color-brand-green-600: #009a1c;
+  --color-brand-green-700: #007f17;
+  --color-brand-green-800: #06641a;
+  --color-brand-green-900: #0a4f18;
+
+  --color-brand-blue: #333982;
+  --color-brand-blue-50: #eef0f9;
+  --color-brand-blue-100: #dcdff2;
+  --color-brand-blue-200: #b9bde4;
+  --color-brand-blue-300: #9097cf;
+  --color-brand-blue-400: #676eb8;
+  --color-brand-blue-500: #474e9e;
+  --color-brand-blue-600: #333982;
+  --color-brand-blue-700: #2a2f6c;
+  --color-brand-blue-800: #212557;
+  --color-brand-blue-900: #181b40;
+
+  --color-ink: #141a26;
+  --color-slate-muted: #4f5b6e;
+  --color-line: #e3e8ef;
+  --color-surface: #f6f8fa;
+  --color-surface-green: #f3faf4;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgb(20 26 38 / 0.04), 0 8px 24px -12px rgb(20 26 38 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(20 26 38 / 0.04), 0 24px 48px -20px rgb(51 57 130 / 0.28);
+
+  --animate-float-slow: float 9s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+:root {
+  color-scheme: light;
+  --header-height: 4.5rem;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-blue-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(100deg, var(--color-brand-green-700) 0%, var(--color-brand-blue-600) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(120deg, var(--color-brand-green-700) 0%, var(--color-brand-blue-600) 100%);
+}
+
+@utility bg-grid-faint {
+  background-image:
+    linear-gradient(to right, rgb(51 57 130 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(51 57 130 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Long-form article and legal page typography */
+.prose-rvsk {
+  color: var(--color-slate-muted);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.prose-rvsk h2 {
+  color: var(--color-ink);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.prose-rvsk h3 {
+  color: var(--color-ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose-rvsk p {
+  margin-top: 1rem;
+}
+.prose-rvsk ul {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.prose-rvsk li {
+  margin-top: 0.4rem;
+}
+.prose-rvsk li::marker {
+  color: var(--color-brand-green-600);
+}
+.prose-rvsk a {
+  color: var(--color-brand-blue-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-rvsk a:hover {
+  color: var(--color-brand-green-700);
+}
+.prose-rvsk strong {
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
