@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 /*
+ * Fonts (Inter, Manrope) are self-hosted from @fontsource-variable, imported in layout.tsx,
+ * so builds do not depend on downloading Google Fonts.
+ *
  * RVSK brand tokens.
  * Brand green #00AC1F and brand blue #333982 are taken from the existing
  * rvsktaxservices.com stylesheet (Elementor global colours).
@@ -38,8 +41,8 @@
   --color-surface: #f6f8fa;
   --color-surface-green: #f3faf4;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
   --shadow-soft: 0 1px 2px rgb(20 26 38 / 0.04), 0 8px 24px -12px rgb(20 26 38 / 0.12);
   --shadow-lift: 0 2px 4px rgb(20 26 38 / 0.04), 0 24px 48px -20px rgb(51 57 130 / 0.28);

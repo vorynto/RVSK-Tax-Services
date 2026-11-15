@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/manrope";
 import { JsonLd } from "@/components/JsonLd";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -7,9 +8,6 @@ import { MotionProvider } from "@/components/motion/Motion";
 import { site } from "@/data/site";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import "./globals.css";
-
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap", weight: ["600", "700", "800"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -39,7 +37,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${inter.variable} ${manrope.variable} antialiased`}>
+    <html lang="en-IN" className="antialiased">
       <body className="flex min-h-dvh flex-col overflow-x-clip">
         <MotionProvider>
           <Header />
