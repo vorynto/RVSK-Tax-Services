@@ -75,7 +75,11 @@ When these are missing, the endpoint returns `503` and the form tells the visito
 3. Deploy, then add `rvsktaxservices.com` (and `www`) under Domains and update DNS at the registrar.
 4. Submit `https://rvsktaxservices.com/sitemap.xml` in Google Search Console.
 
-### Any Node.js host (e.g. Hostinger Node.js, a VPS)
+### Hostinger (current production)
+
+The live site runs as a Node.js app on the Hostinger Cloud plan (target recorded in `.hostinger/site.json`). It was deployed by uploading `git archive` of the branch and starting a Node.js build: Node 22, app type `next`, build script `build`, output `.next`. Note that `public_html/.htaccess` must contain only the Passenger (Node.js) lines — the old WordPress/LiteSpeed cache rules were removed because they made LiteSpeed serve cached WordPress pages. Clear the website cache in hPanel after a deploy if old content shows.
+
+### Any Node.js host (e.g. a VPS)
 
 ```bash
 npm ci
