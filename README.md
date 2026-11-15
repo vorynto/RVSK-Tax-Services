@@ -2,7 +2,7 @@
 
 The marketing website for [RVSK Tax Services](https://rvsktaxservices.com). It replaces the previous WordPress site with a Next.js App Router build that uses a light theme with the existing brand colours.
 
-**Stack:** Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide icons.
+**Stack:** Next.js 16 (App Router; production builds use webpack via `next build --webpack`, which is more reliable on shared build servers) · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide icons.
 
 ## Getting started
 
